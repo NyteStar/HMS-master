@@ -45,7 +45,7 @@ if (empty($_SESSION['reception']) OR empty($_SESSION['type'])) {
 			</table>
 		</div>
 		<?php 
-		include "includes/footer.php";
+		include "../includes/footer.php";
 		 ?>
 	</div>
 </body>

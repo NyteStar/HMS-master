@@ -31,7 +31,7 @@ if (empty($_SESSION['doctor']) OR empty($_SESSION['type'])) {
 			
 		</div>
 		<?php 
-		include "includes/footer.php";
+		include "../includes/footer.php";
 		
 		 ?>
 	</div>

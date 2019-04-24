@@ -111,6 +111,7 @@ elseif (!empty($_SESSION['bursar'])&&!empty($_SESSION['type'])) {
 		 } 
 		 ?>
 	</div>
+	
 </div>
 </body>
 </html>

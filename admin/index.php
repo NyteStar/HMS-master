@@ -107,7 +107,7 @@ if (empty($_SESSION['admin']) OR empty($_SESSION['type'])) {
 			</div>
 		</div>
 		<?php 
-		include "includes/footer.php";
+		include "../includes/footer.php";
 		 ?>
 	</div>
 </body>

@@ -60,7 +60,7 @@ if (empty($_SESSION['doctor']) OR empty($_SESSION['type'])) {
 			</center>
 			</div>
 		<?php 
-		include "includes/footer.php";
+		include "../includes/footer.php";
 		 ?>
 	</div>
 
