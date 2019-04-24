@@ -31,8 +31,8 @@ function login()
 				$_SESSION['reception'] = $name;
 				header("Location: reception/");
 			}
-			/*
-			elseif ($type=="Doctor" OR $type=="" OR $type=="" OR $type=="") {
+			
+			elseif ($type=="Doctor" OR $type=="Family Physician" OR $type=="Pediatrician" OR $type=="Surgeon" OR  $type=="Dentist" OR  $type=="Dermatologist") {
 				@session_start();
 				$_SESSION['type'] = $type;
 				$_SESSION['doctor'] = $name;
@@ -56,7 +56,7 @@ function login()
 				$_SESSION['cashier'] = $name;
 				header("Location: cashier/");
 			}
-			*/
+			
 			else{
 				echo "<b>Error</b>";
 			}
@@ -102,7 +102,7 @@ function receptiondetails()
 	}
 }
 
-/*
+
 function cashierdetails()
 {
 	@session_start();
@@ -154,6 +154,6 @@ function pharmacydetails()
 		echo "Welcome, <i>".$row['fname']." ".$row['sname']."</i> (<a href='../logout.php'>Logout</a>)";
 	}
 }
-*/
+
 
 ?>
