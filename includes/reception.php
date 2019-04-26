@@ -114,6 +114,80 @@ function addpatient()
 	}
 }
 
+function assigntodoctor()
+{	global $con;
+	$doctor = trim(htmlspecialchars($_POST['doctor']));
+
+	@require_once "connect.php";
+	$id = $_GET['id'];
+	$day = date('d');
+	$month = date('m');
+	$year = date('Y');
+
+	if ($doctor=="Dentist") {
+		$price = 400;
+		
+				$sql = "INSERT INTO hospital.medication VALUES ('','$id','recdoctor','','','','','$doctor','$price','','','$day','$month','$year')";
+
+			$query = mysqli_query($con,$sql);
+			if (!empty($query)) {
+				echo "<br><b style='color:#008080;font-size:14px;font-family:Arial;'>Patient is Successfully Assigned To a $doctor</b><br><br>";
+			}
+			else{
+				echo mysqli_error();
+			}
+	}
+	elseif ($doctor=="Family Physician") {
+		$price = 200;
+		$sql = "INSERT INTO hospital.medication VALUES ('','$id','recdoctor','','','','','$doctor','$price','','','$day','$month','$year')";
+
+			$query = mysqli_query($con,$sql);
+			if (!empty($query)) {
+				echo "<br><b style='color:#008080;font-size:14px;font-family:Arial;'>Patient is Successfully Assigned To a $doctor</b><br><br>";
+			}
+			else{
+				echo mysqli_error();
+			}
+	}
+	elseif ($doctor=="Pediatrician") {
+		$price = 300;
+
+		$sql = "INSERT INTO hospital.medication VALUES ('','$id','recdoctor','','','','','$doctor','$price','','','$day','$month','$year')";
+
+			$query = mysqli_query($con,$sql);
+			if (!empty($query)) {
+				echo "<br><b style='color:#008080;font-size:14px;font-family:Arial;'>Patient is Successfully Assigned To a $doctor</b><br><br>";
+			}
+			else{
+				echo mysqli_error();
+			}
+	}
+	elseif ($doctor=="Surgeon") {
+		$price = 500;
+		$sql = "INSERT INTO hospital.medication VALUES ('','$id','recdoctor','','','','','$doctor','$price','','','$day','$month','$year')";
+
+			$query = mysqli_query($con,$sql);
+			if (!empty($query)) {
+				echo "<br><b style='color:#008080;font-size:14px;font-family:Arial;'>Patient is Successfully Assigned To a $doctor</b><br><br>";
+			}
+			else{
+				echo mysqli_error();
+			}
+	}
+	elseif ($doctor=="Dermatologist") {
+		$price = 250;
+		$sql = "INSERT INTO hospital.medication VALUES ('','$id','recdoctor','','','','','$doctor','$price','','','$day','$month','$year')";
+
+			$query = mysqli_query($con,$sql);
+			if (!empty($query)) {
+				echo "<br><b style='color:#008080;font-size:14px;font-family:Arial;'>Patient is Successfully Assigned To a $doctor</b><br><br>";
+			}
+			else{
+				echo mysqli_error();
+			}
+	}
+}
+
 function updatepatient()
 {
 	global $con;

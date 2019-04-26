@@ -21,8 +21,8 @@ if (empty($_SESSION['doctor']) OR empty($_SESSION['type'])) {
 			<br>
 			<br>
 			<center>
-				<form action="addsymptoms.php?id=<?php echo $id = $_GET['id']; ?>" method="POST">
-				<input type="text" name="name" class="form" value="
+				<form action="addsymptoms.php?id=<?php echo $id = $_GET['id']; ?>"  method="POST">
+				<input type="text" name="name" class="form" style ="text-align: left;" value="
 
 				<?php 
 				require '../includes/connect.php';

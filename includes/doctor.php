@@ -52,14 +52,14 @@ function labdoctor()
 
 function searchpatients()
 {
-			require 'connect.php';
-			$fname = $_GET['s'];
+			@require 'connect.php';
+			$p_id = $_GET['s'];
 			$typee = $_SESSION['type'];
 			$sql = "SELECT * FROM hospital.medication WHERE `doctor_type`='$typee' AND `status`='recdoctor'";
 			$query = mysqli_query($con, $sql);
 			while ($row = mysqli_fetch_array($query)) {
 				$ido = $row['patient_id'];
-				$sql2 = "SELECT * FROM hospital.patient WHERE `id`='$ido' AND `id` LIKE '%$fname%'";
+				$sql2 = "SELECT * FROM hospital.patient WHERE `id`='$p_id'";
 				$query2 = mysqli_query($con, $sql2);
 		while ($row2 = mysqli_fetch_array($query2)) {
 			echo "<tr height=30px'>";
@@ -67,7 +67,7 @@ function searchpatients()
 			echo "<td>".$row2['fname']."</td>";
 			echo "<td>".$row2['sname']."</td>";
 			echo "<td>".$row2['sex']."</td>";
-			echo "<td><center><a href='addsymptoms.php?id=".$row['id']."'>Add</a></center></td>";
+			echo "<td><center><a href='addsymptoms.php?id=".$row2['id']."'>Add</a></center></td>";
 			echo "</tr>";
 		}
 		
@@ -79,11 +79,11 @@ function searchnewpatients()
 			@require 'connect.php';
 			$fname = $_GET['s'];
 			$typee = $_SESSION['type'];
-			$sql = "SELECT * FROM hospital.medication WHERE `doctor_type`='$typee' AND `status`='labdoctor'";
+			$sql = "SELECT * FROM hospital.medication WHERE `doctor_type`='$typee' /*AND `status`='labdoctor'";
 			$query = mysqli_query($con, $sql);
 			while ($row = mysqli_fetch_array($query)) {
 				$ido = $row['patient_id'];
-				$sql2 = "SELECT * FROM hospital.patient WHERE `id`='$ido' AND `id` LIKE '%$fname%'";
+				$sql2 = "SELECT * FROM hospital.patient WHERE /*`id`='$ido' AND */ `id` LIKE '%$fname%'";
 				$query2 = mysqli_query($con, $sql2);
 		while ($row2 = mysqli_fetch_array($query2)) {
 			echo "<tr height=30px'>";
@@ -129,7 +129,7 @@ function addmedicine()
 		$sql = "UPDATE hospital.medication SET `status`='pharmacy',`medical`='$medicine' WHERE `id`='$id'";
 		$query = mysqli_query($con, $sql);
 		if (!empty($query)) {
-			echo "<br><b style='color:#008080;font-size:14px;font-family:Arial;'>Succesifully Sent</b>";
+			echo "<br><b style='color:#008080;font-size:14px;font-family:Arial;'>Successfully Sent</b>";
 		}
 		else{
 			echo mysql_error();

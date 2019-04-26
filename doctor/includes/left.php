@@ -1,7 +1,7 @@
 <div class="left"><br>
 	<center>
 		<a href="index.php"><button class="btnlink">Home</button></a><br><br><br><br>
-		<a href="reception.php"><button class="btnlink" style="height:auto !important;">From Reception<br><br> 
+		<a href="reception.php"><button class="btnlink" style="height:auto !important;">Lab Tests<br><br> 
 		<?php 
 			@require "./../includes/connect.php";
 			$typee = $_SESSION['type'];
@@ -10,7 +10,7 @@
 			//echo "("mysqli_num_rows($query)")";
 		?>
 		</button></a><br><br><br>
-		<a href="laboratory.php"><button class="btnlink" style="height:auto !important;">From Laboratory<br> 
+		<a href="laboratory.php"><button class="btnlink" style="height:auto !important;">Test Results<br> 
 		<?php 
 			@require "./../includes/connect.php";
 			$typee = $_SESSION['type'];
